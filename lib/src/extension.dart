@@ -55,10 +55,10 @@ extension DeviceExt on num {
   /// density and aspect ratio
   double get sp =>
       this *
-      (((h + w) + (Device.pixelRatio * Device.aspectRatio)) / 2.08) /
-      100;
+      (((h + w) + (Device.pixelRatio * 160 * Device.aspectRatio))) /
+      (2.08 * 100);
 
   /// Calculates the material dp (Pixel Density)
   /// (https://material.io/design/layout/pixel-density.html#pixel-density-on-android))
-  double get dp => this * (w * 160) / Device.pixelRatio;
+  double get dp => this * w / Device.pixelRatio;
 }
